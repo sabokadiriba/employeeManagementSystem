@@ -1,0 +1,119 @@
+{% extends 'base.html'%}
+
+{% block body %}
+
+ <div class="row">
+      <div class="content container-fluid">
+               <div class="page-header">
+                  <div class="row align-items-center">
+                     <div class="col">
+                        <h3 class="page-title">Applay for leave</h3>
+                        <ul class="breadcrumb">
+                           <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                           <li class="breadcrumb-item active">Leave</li>
+                        </ul>
+                     </div>
+
+
+                      <div class="col-auto text-right float-right ml-auto">
+                       <button type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                         Leave History
+                        </button>
+                     </div>
+                  </div>
+               </div>
+                  <div class="col-sm-12">
+                     <div class="card">
+                        <div class="card-body">
+                           <form method="POST" action="{% url 'employee_applay_leave_save' %}" >
+                                {% csrf_token %}
+
+                                 {% include 'includes/messages.html' %}
+
+                                 <div class="col-sm-11">
+                                    <div class="form-group">
+                                       <label>leave Date</label>
+                                       <input type="date" class="form-control" name="leave_date">
+                                    </div>
+                                 </div>
+                                <div class="col-sm-11">
+                                    <div class="form-group">
+                                       <label>Leave message</label>
+                                       <textarea class="form-control" name="leave_message" style="height:250px;"></textarea>
+                                    </div>
+                                 </div>
+
+                                 <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">Apllay for leave</button>
+                                 </div>
+
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+          </div>
+
+
+<!--     view leave history modal-->
+<!-- Modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Employee leave history</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+           <div class="row">
+                  <div class="col-sm-12">
+                     <div class="card card-table">
+                        <div class="card-body">
+                           <div class="table-responsive">
+                              <table id="mytable" class="table table-hover table-center mb-0 datatable">
+                                 <thead>
+                                    <tr>
+
+                                       <th>Date</th>
+                                        <th>message</th>
+
+                                       <th class="text-right">status</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                 <tr>
+                                      {% for i in leave_employee_history %}
+                                  <th>{{i.data}}</th>
+                                   <th>{{i.message}}</th>
+                                 <td>
+                                      <div class="actions text-dark" >
+                                               {% if i.status == 0 %}
+                                              <span  class="btn btn-secondary text-dark"><h6>request is panding</h6></span>
+
+                                               {% elif i.status == 1%}
+                                              <span  class="badge badge-success text-dark"> accepted</span>
+                                               {% else %}
+                                             <span  class="badge badge-danger text-dark"> rejected</span>
+                                               {% endif %}
+                                          </div>
+                                 </td>
+                                 </tr>
+
+
+                                {% endfor%}
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

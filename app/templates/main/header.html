@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>MinT EMS </title>
+       <!-- dataTable library -->
+      <script src="{% static 'datatables/datatables.min.js ' %}"></script>
+   <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script type="text/javascript">
+      	 $(document).ready(function (){
+     $('#mytable').dataTable()});
+      </script>
+       <script type="text/javascript">
+      	 $(document).ready(function (){
+     $('#mytable2').dataTable()});
+      </script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
+       <!-- Load icon library -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="{% static 'fontawesome/css/all.min.css'%}" rel="stylesheet">
+<link href="{% static 'fontawesome/css/fontawesome.min.css'%}" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'bootstrap/asset/css/bootstrap.min.css'%}" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'dashboard.css' %}">
+
+  </head>
+
+
+{% load static %}
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"> <img src="{% static 'images/logo1.png ' %}" style="width: 210px;height: 50px;"></a>
+     <h2 ><strong class="text-white"> Wellcome<span>&nbsp;to password reset page</span></strong></h2>
+           <img src="" alt="mdo" width="60" height="60" class="rounded-circle">
+</header>
+  <body >
+
+{% block content %}
+
+{% endblock %}
+<footer class="footer mt-auto py-3 bg-light ">
+  <div class="container">
+    <span class="text-muted" style="padding-left: 300px;">Copyright © 2022-2023.</span>
+  </div>
+</footer>
+</body>
+</html>

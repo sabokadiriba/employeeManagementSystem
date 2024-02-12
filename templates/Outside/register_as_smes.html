@@ -1,0 +1,228 @@
+{% include  'Outside/header1.html' %}
+
+
+ <div class="row px-5" style="background-color: lightblue">
+
+                  <div class="col-sm-12">
+                     <div class="card px-5">
+                         <br><br><br><br><br><br>
+                    <h1>insert your information</h1>
+                        <div class="card-body"  >
+                           <form method="POST" action="{% url 'save_register_as_smes' %}" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                 <div class="col-12">
+                                    <h3 class="form-title"><span>register as smes</span></h3>
+                                 </div>
+                                 {% include 'includes/messages.html' %}
+                               <div class="row">
+                                   <h5>campany information</h5>
+                               </div>
+                               <div class="row">
+                                 <div class="col-sm-6">
+                                    <div class="form-group">
+                                       <label>owner/canpany</label>
+                                       <input type="text" class="form-control" name="campany_name" required>
+                                    </div>
+                                 </div>
+
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                       <label>company taype</label>
+                                       <select class="form-control" name="campany_type" required>
+                                          <option value="Sole property">Sole property</option>
+                                          <option value="joint">joint</option>
+                                          <option value="partnership">partnership</option>
+                                          <option value="Others">Others</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 </div>
+
+                               <div class="row">
+                                   <h5>manger full name</h5>
+                               </div>
+                                <div class="row">
+                                 <div class="col-sm-6">
+                                    <div class="form-group">
+                                       <label>First Name</label>
+                                       <input type="text" class="form-control" name="first_name" required>
+                                    </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                    <div class="form-group">
+                                       <label>Father Name</label>
+                                       <input type="text" class="form-control" name="father_name" required>
+                                    </div>
+                                 </div>
+                                 </div>
+                                <div class="row">
+                                 <div class="col-sm-6">
+                                    <div class="form-group">
+                                       <label>Grand Father Name</label>
+                                       <input type="text" class="form-control" name="grand_father_name" required>
+                                    </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                    <div class="form-group">
+                                       <label>Nationality</label>
+                                       <input type="text" class="form-control" name="nationality" required>
+                                    </div>
+                                 </div>
+                                </div>
+
+                               <div class="row">
+                                   <h5>business address</h5>
+                               </div>
+
+                                <div class="row">
+                                 <div class="col-sm-6">
+                                    <div class="form-group">
+                                       <label>Region</label>
+                                       <input type="text" class="form-control" name="region" required>
+                                    </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                    <div class="form-group">
+                                       <label>Zone</label>
+                                       <input type="text" class="form-control" name="zone" required>
+                                    </div>
+                                 </div>
+                                 </div>
+
+                                <div class="row">
+                                 <div class="col-sm-6">
+                                    <div class="form-group">
+                                       <label>kebale</label>
+                                       <input type="text" class="form-control" name="kebele" required>
+                                    </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                    <div class="form-group">
+                                       <label>House Number</label>
+                                       <input type="text" class="form-control" name="house_number" required>
+                                    </div>
+                                 </div>
+                                 </div>
+
+                                <div class="row">
+                                 <div class="col-sm-6">
+                                    <div class="form-group">
+                                       <label>P.O.Box</label>
+                                       <input type="text" class="form-control" name="p_o_box" required>
+                                    </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                    <div class="form-group">
+                                       <label>Fax</label>
+                                       <input type="text" class="form-control" name="fax" required>
+                                    </div>
+                                 </div>
+                                 </div>
+
+                                <div class="row">
+                                 <div class="col-sm-6">
+                                    <div class="form-group">
+                                       <label>Email</label>
+                                       <input type="email" class="form-control" name="email" required>
+                                    </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                    <div class="form-group">
+                                       <label>Capital in ETB</label>
+                                       <input type="text" class="form-control" name="capital" required>
+                                    </div>
+                                 </div>
+                                 </div> <div class="row">
+                                 <div class="col-sm-6">
+                                    <div class="form-group">
+                                       <label>Tin</label>
+                                       <input type="text" class="form-control" name="tin" required>
+                                    </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                    <div class="form-group">
+                                       <label>Registration Date</label>
+                                       <input type="date" class="form-control" name="registasion_date" required>
+                                    </div>
+                                 </div>
+                                 </div>
+                               <div class="row">
+                                 <div class="col-sm-6">
+                                    <div class="form-group">
+                                       <label>VAT number</label>
+                                        <input type="text" class="form-control" name="vat_no" required>
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-6">
+                                    <div class="form-group">
+                                       <label>Title of innovative project</label>
+                                        <textarea cols="" class="form-control" name="about_title" required></textarea>
+                                    </div>
+                                 </div>
+                                 </div>
+
+
+
+
+ . ICT and Digital technologies <br>
+
+                               Please tick appropriate field. You can tick more than one field.
+Software Publishing:-
+Involves in producing and distributing computer software, such as designing, providing documentation, assisting in installation, and providing support services to customers
+Telecommunications:-
+Wired/wireless operators, satellite companies, cable companies and internet service providers VISP, Value added services (VAS)
+Web applications:-
+Data processing, hosting and related activities
+Innovative advanced electronics systems Maintenance and e-waste management:-
+Repair of computers and communication equipment Component Producers
+                                  <div class="col-12 col-sm-12 mt-2">
+                                    <div class="form-group form-check">
+                                     <input type="checkbox" class="form-check-input" name="field" value="SoftwarePublishing">
+                                     <label class="form-check-label" >Software Publishing</label>
+                                    </div>
+                                 </div>
+                                  <div class="col-12 col-sm-12 mt-2">
+                                    <div class="form-group form-check">
+                                     <input type="checkbox" class="form-check-input" name="field" value="Webapplications">
+                                     <label class="form-check-label" >Web applications</label>
+                                    </div>
+                                 </div>
+                                <div class="col-12 col-sm-12 mt-2">
+                                    <div class="form-group form-check">
+                                     <input type="checkbox" class="form-check-input" name="field" value="Telecommunications">
+                                     <label class="form-check-label" >Telecommunications</label>
+                                    </div>
+                                 </div>
+
+                             .  ICT enabled Start-ups and SMEs
+                                <div class="col-12 col-sm-12 mt-2">
+                                    <div class="form-group form-check">
+                                     <input type="checkbox" class="form-check-input" name="field" value="GraphicDesign">
+                                     <label class="form-check-label" >Graphic Design</label>
+                                    </div>
+                                 </div>
+                                <div class="col-12 col-sm-12 mt-2">
+                                    <div class="form-group form-check">
+                                     <input type="checkbox" class="form-check-input" name="field" value="E-commerce/digital">
+                                     <label class="form-check-label" >E-commerce/digital</label>
+                                    </div>
+                                 </div>
+
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                       <label>Attach your proposal</label>
+                                        <input type="file" class="form-control" name="proposal" required>
+                                    </div>
+                                 </div>
+                                <br>
+                                 <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">summit</button>
+                                 </div>
+
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+{% include  'Outside/footer1.html' %}

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>MinT EMS </title>
+       <!-- dataTable library -->
+      <script src="{% static 'datatables/datatables.min.js ' %}"></script>
+   <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script type="text/javascript">
+      	 $(document).ready(function (){
+     $('#mytable').dataTable()});
+      </script>
+       <script type="text/javascript">
+      	 $(document).ready(function (){
+     $('#mytable2').dataTable()});
+      </script>
+
+       <!-- Load icon library -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="{% static 'fontawesome/css/all.min.css'%}" rel="stylesheet">
+<link href="{% static 'fontawesome/css/fontawesome.min.css'%}" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'bootstrap/asset/css/bootstrap.min.css'%}" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dashboard.css' %}">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+        /* The heart of the matter */
+
+
+
+
+            div.div.scroll {
+
+
+
+
+
+
+
+                width: 100p%;
+
+                height: 500px;
+
+                overflow-x: hidden;
+
+                overflow-y: auto;
+
+                text-align:justify;
+
+            }
+
+
+
+
+
+    </style>
+
+
+  </head>
+  <body>
+{% include 'includes/header.html' %}
+{% include 'includes/sidebar.html' %}
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  {% block body %}
+
+
+        {% endblock %}
+    </main>
+
+
+  </div>
+</div>
+<br>
+
+{% include 'includes/footer.html' %}
+
+    <script src="{% static 'bootstrap/asset/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'datatables/datatables.min.js' %}"></script>
+    <script src="{% static 'datatables/jquery.dataTables.min.js' %}"></script>
+ </body>
+</html>

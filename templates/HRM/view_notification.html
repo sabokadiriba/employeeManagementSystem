@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{%block body%}
+   <div class="content container-fluid">
+               <div class="page-header">
+                  <div class="row align-items-center">
+                     <div class="col">
+                        <h3 class="page-title">notification</h3>
+                         {% include 'includes/messages.html' %}
+                        <ul class="breadcrumb">
+                           <li class="breadcrumb-item"><a href="index.html">notification</a></li>
+                           <li class="breadcrumb-item active">notification</li>
+                        </ul>
+                     </div>
+
+
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="card card-table">
+                        <div class="card-body">
+                           <div class="table-responsive">
+                              <table id="mytable" class="table table-hover table-center mb-0 datatable">
+                                 <thead>
+                                    <tr>
+                                       <th>message</th>
+                                       <th class="text-right">Action</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                 {% for i in notification %}
+                                    <tr>
+                                       <td>{{i.message}}</td>
+
+                                       <td class="text-right">
+                                          <div class="actions">
+                                            {% if i.status == 0 %}
+                                          <a href="{% url 'staff_mark_as_read_notification' status=i.id %}" class="btn btn-danger">Mark as Done</a>
+
+                                           {% else %}
+                                            <button class="btn btn-danger" disabled="disabled">Mark as Done</button>
+                                           {% endif %}
+                                          </div>
+                                       </td>
+                                    </tr>
+                                {% endfor%}
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+{% endblock %}

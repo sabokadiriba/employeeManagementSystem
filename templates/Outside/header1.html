@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content=" ">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>EMSS for  MinT</title>
+
+
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/lib/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- Bootstrap core CSS -->
+
+<link href="{% static 'bootstrap/asset/css/bootstrap.min.css'%}" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dashboard.css' %}">
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/style/main.css'%}">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+
+  </head>
+
+
+
+   <header class="fixed-top bg-light">
+    <div class="px-0 bg-white  border-bottom  ">
+      <div class="container">
+<i class="fa fa-car"></i>
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start ">
+          <div class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+              <marquee behavior="" direction=""> <h2 style="color:green;">EMPLOYEE MANAGEMENT SYSTEM FOR MInT BY HU STUDENTS</h2>
+      </marquee>
+               </div>
+       <a href="https://twitter.com/MinistryofInno2?s=09" style="padding-right: 30px;"><svg class="bi" width="1em" height="1em" ><use xlink:href="#twitter"/></svg></a>
+                 <a href="https://www.facebook.com/MInT.Ethiopia/" style="padding-right: 50px;"><svg class="bi" width="1em" height="1em" ><use xlink:href="#facebook"/></svg></a>
+
+        </div>
+      </div>
+    </div>
+
+    <div class=" mb-0 py-0 ">
+      <div class="container d-flex flex-wrap ">
+        <div class="col-12 col-lg-auto  mb-lg-0 me-lg-auto col-4">
+   <img src="{% static 'images/logo1.png ' %}" style="width: 350px;height: 50px;">
+
+        </div>
+
+        <div class="text-end col-8">
+        	 <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+            <li>
+              <a href="{% url 'dashboard' %}" class="nav-link text-dark">
+                   <h1>Home</h1>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'login' %}" class="nav-link text-dark">
+                    <h1>Login</h1>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'help' %}" class="nav-link text-dark">
+              <h1>Help</h1>
+              </a>
+            </li>
+
+
+
+      </ul>
+
+        </div>
+      </div>
+    </div>
+  </header>
+

@@ -1,0 +1,64 @@
+{% extends 'base.html'%}
+{%block body%}
+   <div class="content container-fluid">
+               <div class="page-header">
+                  <div class="row align-items-center">
+                     <div class="col">
+                        <h3 class="page-title">Leave</h3>
+                        <ul class="breadcrumb">
+                           <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                           <li class="breadcrumb-item active">leave</li>
+                             {% include 'includes/messages.html' %}
+                        </ul>
+                     </div>
+
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="card card-table">
+                        <div class="card-body">
+                           <div class="table-responsive">
+                              <table id="mytable" class="table table-hover table-center mb-0 datatable">
+                                 <thead>
+                                    <tr>
+                                       <th>ID</th>
+                                       <th>staff Name</th>
+                                       <th>leaved ate</th>
+                                       <th>message</th>
+                           <th class="text-right">Action</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                 {% for i in employee_leave %}
+                                    <tr>
+                                       <td>{{i.id}}</td>
+                                       <td>{{i.employee_id.admin.first_name}}</td>
+
+                                         <td>{{i.data}}</td>
+                                         <td>{{i.message}}</td>
+
+                                       <td class="text-right">
+                                          <div class="actions" >
+                                               {% if i.status == 0 %}
+                                              <a href="{% url 'approve_employee_leave'  i.id%}" class="btn btn-success">Approve</a>
+                                              <a href="{% url 'disapprove_employee_leave' i.id %}" class="btn btn-danger">DisApprove</a>
+                                               {% elif i.status == 1%}
+                                              <button class="btn btn-success" disabled="disabled">Approved</button>
+                                               {% else %}
+                                               <button class="btn btn-danger" disabled="disabled">Disapproved</button>
+
+                                               {% endif %}
+                                          </div>
+                                       </td>
+                                    </tr>
+                                {% endfor%}
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+{% endblock %}>

@@ -1,0 +1,81 @@
+{% extends 'base.html'%}
+      {% block body %}
+
+
+       <div class="page-header">
+                  <div class="row">
+                     <div class="col-sm-12">
+                        <h3 class="page-title">Welcome to Manager Page !</h3>
+                        <ul class="breadcrumb">
+                           <li class="breadcrumb-item active">Dashboard</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-6 d-flex">
+                     <div class="card bg-one w-100">
+                        <div class="card-body">
+                           <div class="db-widgets d-flex justify-content-between align-items-center bg-light">
+                              <div class="db-icon">
+                                 <i class="fas fa-user-graduate"></i>
+                              </div>
+                              <div class="db-info">
+                                 <h3>{{department}}</h3>
+                                 <h6>Active department</h6>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-6">
+                     <div class="card bg-two w-100">
+                        <div class="card-body bg-white">
+                           <div class="db-widgets d-flex justify-content-between align-items-center">
+                              <div class="db-icon">
+                                 <i class="fas fa-user-graduate"></i>
+                              </div>
+                              <div class="db-info">
+                                 <h3>{{employee}}</h3>
+                                 <h6> Active employee</h6>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div><br><br><br>
+         <div class="row">
+                  <div class="col-6 d-flex">
+                     <div class="card bg-one w-100">
+                        <div class="card-body">
+                           <div class="db-widgets d-flex justify-content-between align-items-center bg-light">
+                              <div class="db-icon">
+                                 <i class="fas fa-user-graduate"></i>
+                              </div>
+                              <div class="db-info">
+                                 <h3>{{staff}}</h3>
+                                 <h6>Active staff</h6>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-6">
+                     <div class="card bg-two w-100">
+                        <div class="card-body bg-white">
+                           <div class="db-widgets d-flex justify-content-between align-items-center">
+                              <div class="db-icon">
+                                 <i class="fas fa-user-graduate"></i>
+                              </div>
+                              <div class="db-info">
+                                 <h3>{{eleave}}</h3>
+                                 <h6> applayed leave</h6>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div><br><br><br>
+
+      {% endblock %}
+

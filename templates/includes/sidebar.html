@@ -1,0 +1,172 @@
+
+
+<br>
+<div class="  container ">
+  <div class="scroll row">
+      <nav id="slimScrolls" class="col-md-3 col-lg-2 d-md-block text-white bg-light sidebar collapse slimscroll">
+      <div class="position-sticky pt-3">
+       <ul class="list-unstyled ps-0 ">
+     {% if user.user_type == '1' %}
+           <li class="mb-1 te">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false">
+    Department
+        </button>
+        <div class="collapse " id="collapse1">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'add_department' %}" class="link-dark rounded">Add Department</a></li>
+            <li><a href="{% url 'view_department' %}" class="link-dark rounded">view Department</a></li>
+          </ul>
+        </div>
+      </li>
+           <li class="mb-1 te">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false">
+   Session Year
+        </button>
+        <div class="collapse " id="collapse2">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'add_session' %}" class="link-dark rounded">Add Session year</a></li>
+            <li><a href="{% url 'view_session' %}" class="link-dark rounded">view Session year</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1 te">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="">
+    Employee
+        </button>
+        <div class="collapse " id="collapse3">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'add_employee' %}" class="link-dark rounded">Add employee</a></li>
+            <li><a href="{% url 'view_employee' %}" class="link-dark rounded">view employee</a></li>
+          </ul>
+        </div>
+      </li>
+          <li class="mb-1 te">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true">
+    HR manager
+        </button>
+        <div class="collapse " id="collapse4">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+           <li><a href="{% url 'add_staff' %}" class="link-dark rounded">add HRM </a></li>
+            <li><a href="{% url 'view_staff' %}" class="link-dark rounded">view HRM </a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true">
+    leave
+        </button>
+        <div class="collapse " id="collapse5">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+           <li><a href="{% url 'view_employee_leave' %}" class="link-dark rounded">Manager view leave</a></li>
+           </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="true">
+    notification
+        </button>
+        <div class="collapse " id="collapse6">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+           <li><a href="{% url 'send_notification_to_employee' %}" class="link-dark rounded">send notification to employee</a></li>
+            <li><a href="{% url 'send_notification_to_staff' %}" class="link-dark rounded">send notification to HRM</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="true">
+    feedback
+        </button>
+        <div class="collapse " id="collapse7">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+           <li><a href="{% url 'manager_reply_employee_feedback' %}" class="link-dark rounded"> view and reply employee feedback</a></li>
+            <li><a href="{% url 'manager_reply_staff_feedback' %}" class="link-dark rounded">view and reply HRM feedback</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+               <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="true">
+    Attendance
+        </button>
+        <div class="collapse " id="collapse8">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+           <li><a href="{% url 'manager_view_attendance' %}" class="link-dark rounded">view attendance</a></li>
+          </ul>
+        </div>
+      </li>
+
+       {% elif user.user_type == '2' %}
+
+               <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="true">
+    Attendance
+        </button>
+        <div class="collapse show" id="collapse9">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+           <li><a href="{% url 'staff_take_attendance' %}" class="link-dark rounded">Take attendance</a></li>
+           <li><a href="{% url 'staff_view_attendance' %}" class="link-dark rounded">view attendance</a></li>
+          </ul>
+        </div>
+      </li>
+              <li class="mb-1">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="true">
+    notification
+        </button>
+        <div class="collapse show" id="collapse10">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+           <li><a href="{% url 'staff_view_notification' %}" class="link-dark rounded">view notification from manager</a></li>
+
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#collapse11" aria-expanded="true">
+    feedback
+        </button>
+        <div class="collapse show" id="collapse11">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+           <li><a href="{% url 'staff_feedback' %}" class="link-dark rounded"> view and reply feedback</a></li>
+          </ul>
+        </div>
+      </li>
+
+
+        {% else %}
+
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="true">
+    leave
+        </button>
+        <div class="collapse show" id="collapse12">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+           <li><a href="{% url 'employee_applay_leave' %}" class="link-dark rounded">applay for leave and view leave history</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#collapse13" aria-expanded="true">
+    notification
+        </button>
+        <div class="collapse show" id="collapse13">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a href="{% url 'view_notification' %}" class="link-dark rounded">view notification from manager</a></li>
+               </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#collapse14" aria-expanded="true">
+    feedback
+        </button>
+        <div class="collapse show" id="collapse14">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+           <li><a href="{% url 'employee_feedback' %}" class="link-dark rounded"> write and view feedback</a></li>
+          </ul>
+        </div>
+      </li>
+          {% endif %}
+    </ul>
+      </div>
+
+    </nav>
+     </div>
+</div>

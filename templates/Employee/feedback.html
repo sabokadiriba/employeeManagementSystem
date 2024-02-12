@@ -1,0 +1,164 @@
+{% extends 'base.html'%}
+
+{% block body %}
+
+ <div class="row">
+      <div class="content container-fluid">
+               <div class="page-header">
+                  <div class="row align-items-center">
+                     <div class="col">
+                        <h3 class="page-title">Send feedback</h3>
+                        <ul class="breadcrumb">
+                           <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                           <li class="breadcrumb-item active">feedback</li>
+                        </ul>
+                     </div>
+
+                      <div class="col-auto text-right float-right ml-auto">
+                       <button type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                         feedback History
+                        </button>
+                     </div>
+                  </div>
+               </div>
+                  <div class="col-sm-12">
+                     <div class="card">
+                        <div class="card-body">
+                           <form method="POST" action="{% url 'save_employee_feedback' %}" >
+                                {% csrf_token %}
+
+                                 {% include 'includes/messages.html' %}
+
+
+                                <div class="col-sm-11">
+                                    <div class="form-group">
+                                       <label>feedback message</label>
+                                       <textarea class="form-control" name="feedback" style="height:250px;"></textarea>
+                                    </div>
+                                 </div>
+
+                                 <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">send feedback</button>
+                                 </div>
+
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+<!--     view leave history modal-->
+<!-- Modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">feedback history</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <div class="row">
+                  <div class="col-sm-12">
+                     <div class="card card-table">
+                        <div class="card-body">
+                           <div class="table-responsive">
+                              <table id="mytable2" class="table table-hover table-center mb-0 datatable">
+                                 <thead>
+                                    <tr>
+
+                                       <th>ID</th>
+                                         <th>feedback</th>
+                                        <th>replay</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                 <tr>
+                                      {% for i in feedback_history %}
+                                  <th>{{i.id}}</th>
+                                   <th>{{i.feedback}}</th>
+                                 <td>
+                                      <div class="actions" >
+                                               {% if i.feedback_replay == "" %}
+                                              <span  class="btn btn-danger " >no replay</span>
+                                               {% else %}
+                                           <h6>{{i.feedback_replay}}</h6>
+
+                                               {% endif %}
+                                          </div>
+                                 </td>
+                                 </tr>
+
+
+                                {% endfor%}
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--     view leave history modal-->
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+                  <div class="col-sm-12">
+                     <div class="card card-table">
+                        <div class="card-body">
+                           <div class="table-responsive">
+                              <table id="mytable" class="table table-hover table-center mb-0 datatable">
+                                 <thead>
+                                    <tr>
+
+                                       <th>ID</th>
+                                         <th>feedback</th>
+                                        <th>replay</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                 <tr>
+                                      {% for i in feedback_history %}
+                                  <th>{{i.id}}</th>
+                                   <th>{{i.feedback}}</th>
+                                 <td>
+                                      <div class="actions" >
+                                               {% if i.feedback_replay == "" %}
+                                              <span  class="badge badge-danger">no replay</span>
+                                               {% else %}
+                                             {{i.feedback_replay}}
+                                               {% endif %}
+                                          </div>
+                                 </td>
+                                 </tr>
+
+
+                                {% endfor%}
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

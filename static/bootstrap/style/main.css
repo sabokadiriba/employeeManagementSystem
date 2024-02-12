@@ -1,0 +1,199 @@
+
+/*************************
+*******Typography******
+**************************/
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700);
+@import url(http://fonts.googleapis.com/css?family=Abel);
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background:;
+  position: relative;
+  font-weight:400px;
+}
+
+ul li {
+  list-style: none;
+}
+
+a:hover {
+outline:blue;
+text-decoration:none;
+}
+
+a:focus {
+  outline:none;
+  outline-offset: 5;
+}
+
+a {
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+    -o-transition: 300ms;
+    transition: 300ms;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+}
+
+.btn:hover, 
+.btn:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+
+.fa-angle-down{
+  padding-left: 5px; 
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+  
+/*************************
+*******Footer CSS******
+**************************/
+
+#footer {
+ background-color: #243c4f;
+  color: white;
+
+}
+#footer h2{
+ 
+  color: white;
+
+}
+
+
+
+.footer-top .container {
+  border-bottom: 1px solid #E0E0DA;
+  padding-bottom: 20px;
+}
+
+
+.footer-top .col-sm-3{
+  overflow: hidden;
+}
+
+
+
+
+.footer-widget {
+  margin-bottom: 68px;
+}
+
+.footer-widget .container {
+  border-top: 1px solid #FFFFFF;
+  padding-top: 15px;
+}
+
+.single-widget h2 {
+  color: #666663;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+}
+
+.single-widget h2 i{
+	margin-right:15px;
+}
+
+.single-widget ul li a{
+	color: #8C8C88;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	padding: 5px 0;
+}
+
+.single-widget ul li a i {
+  margin-right: 18px;
+}
+
+.single-widget ul li a:hover{
+	background:none;
+	color:#FE980F;
+}
+
+.footer-bottom {
+  background-color: #031b2e;
+  padding-top: 10px;
+}
+
+.footer-bottom p {
+  color: #363432;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin-left: 15px;
+}
+
+
+/*************************
+******* Home ******
+**************************/
+
+
+
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 4rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+}
+
+
+
+
+
+.secondsection img{
+  width: 300px;
+  height: 300px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+
+}
+
+.fourthsection img{
+    width: 100px;
+  height: 100px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+
+}

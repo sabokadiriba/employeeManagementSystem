@@ -1,0 +1,36 @@
+
+{% load static %}
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"> <img src="{% static 'images/logo1.png ' %}" style="width: 210px;height: 50px;"></a>
+     <h2 ><strong class="text-white"> Wellcome  <span>&nbsp;{{ user.first_name}} {{ user.last_name}}</span></strong></h2>
+
+
+        <div class="flex-shrink-0 dropdown start-0 position-relative" >
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="true">
+            <img src="/{{ user.profile_pic}}" alt="mdo" width="60" height="60" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end text-small shadow" aria-labelledby="dropdownUser2">
+            <div class="row">
+
+                <div class="col-4">
+                  <img src="/{{ user.profile_pic}}" alt="mdo" width="50" height="50" class="rounded-circle">
+                </div>
+                <div class="col-8 user-text">
+                          <h6><strong><span>{{ user.first_name}} {{ user.last_name}}</span></strong></h6>
+                           {% if user.user_type == '1' %}
+                           <p class="text-muted mb-0">MANAGER</p>
+                           {% elif user.user_type == '2' %}
+                            <p class="text-muted mb-0">HRM</p>
+                           {% else %}
+                            <p class="text-muted mb-0">EMPLOYEE</p>
+                            {% endif %}
+                </div>
+             </div>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="{% url 'profile' %}"> My Profile</a></li>
+          
+             <li><a class="dropdown-item" href="{% url 'logout' %}">Sign out</a></li>
+
+          </ul>
+        </div>
+</header>

@@ -1,0 +1,5 @@
+ <h1>below link are registration.mint.gov.et</h1><br>
+            <a href="{% url 'register_as_smes' %}"><h3>Register as SMES</h3></a>
+            <br>
+             <a href="{% url 'register_as_startUp' %}"><h3>Register as StartUp</h3></a>
+            <br>

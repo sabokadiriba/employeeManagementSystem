@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+      {% block body %}
+   {% load static %}
+
+       <div class="page-header">
+                  <div class="row">
+                     <div class="col-sm-12">
+                        <h3 class="page-title">Welcome To Employee Page!</h3>
+
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-12">
+                     <div class="card bg-two w-100">
+                        <div class="card-body bg-white">
+                           <div class="db-widgets d-flex justify-content-between align-items-center">
+                              <div class="db-info">
+                                <img src="{% static 'images/employee.jpg ' %} " style="height:500px;width:1000px;">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div><br><br><br>
+
+      {% endblock %}

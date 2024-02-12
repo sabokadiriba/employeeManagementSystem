@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{%block body%}
+
+            <div class="content container-fluid">
+               <div class="page-header">
+                  <div class="row align-items-center">
+                     <div class="col">
+                        <h3 class="page-title">view attendance</h3>
+
+                     </div>
+                  </div>
+               </div>
+                {% if action is None %}
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="card">
+                        <div class="card-body">
+
+                           <form action="?action=view_employee" method="POST">
+                             {% csrf_token%}
+                              <div class="row">
+                               {%  include  'includes/messages.html' %}
+                                 <div class="col-12">
+                                    <h5 class="form-title"><span>Attendance Information</span></h5>
+                                 </div>
+                                 <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                       <label>Department</label>
+                                       <select class="form-control" name="department_id" required>
+                                          {% for i in department %}
+                                         <option value="{{i.id}}">{{i.name}}</option>
+                                           {% endfor %}
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                       <label>date</label>
+                                       <select class="form-control" name="session_year_id" required>
+                                          {% for i in session_year %}
+                                         <option value="{{i.id}}">{{i.session_start}} to {{i.session_end}} </option>
+                                           {% endfor %}
+                                       </select>
+                                    </div>
+                                 </div>
+                                    <div class="form-group">
+                                       <label>Attendance Date</label>
+                                       <input type="date" class="form-control" name="attendance_date">
+                                    </div>
+                                 <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">show attend employee</button>
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+                {% else %}
+                <div class="row">
+                  <div class="col-sm-12">
+                     <div class="card">
+                        <div class="card-body">
+
+                           <form action="" method="POST">
+                             {% csrf_token%}
+                              <div class="row">
+                               {%  include  'includes/messages.html' %}
+                                 <div class="col-12">
+                                    <h5 class="form-title"><span>Attendance Information</span></h5>
+                                 </div>
+                                 <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                       <label>Department</label>
+                                       <select class="form-control" name="department_id" disabled>
+
+                                         <option value="{{i.id}}">{{get_department}}</option>
+
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                       <label>date</label>
+                                       <select class="form-control" name="session_year_id" disabled>
+
+                                         <option value="{{i.id}}">{{get_session_year}} </option>
+
+                                       </select>
+                                    </div>
+                                 </div>
+                                    <div class="form-group">
+                                       <label>Attendance Date</label>
+                                       <input type="date" class="form-control" name="attendance_date"value="{{attendance_date }}" disabled>
+                                    </div>
+                                 <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">display employee</button>
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+                  <div class="row">
+                  <div class="col-sm-12">
+                     <div class="card card-table">
+                        <div class="card-body">
+                           <div class="table-responsive">
+                              <table id="mytable" class="table table-hover table-center mb-0 datatable">
+                                 <thead>
+                                    <tr>
+                                       <th>ID</th>
+                                       <th>Name</th>
+                                       <th>EMAIL</th>
+
+
+
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                 {% for i in attendance_report %}
+                                    <tr>
+                                       <td>{{i.employee_id.admin.id}}</td>
+                                        <td>{{i.employee_id.admin.first_name}}&nbsp;{{i.employee_id.admin.last_name}}</td>
+                                        <td>{{i.employee_id.admin.email}}</td>
+                                    </tr>
+                                {% endfor%}
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+   {% endif%}
+            </div>
+
+{%endblock%}

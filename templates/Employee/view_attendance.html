@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{%block body%}
+
+            <div class="content container-fluid">
+               <div class="page-header">
+                  <div class="row align-items-center">
+                     <div class="col">
+                        <h3 class="page-title">Take attendance</h3>
+                        <ul class="breadcrumb">
+                           <li class="breadcrumb-item"><a href="subjects.html">attendance</a></li>
+
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+
+                  <div class="row">
+                  <div class="col-sm-12">
+                     <div class="card card-table">
+                        <div class="card-body">
+                           <div class="table-responsive">
+                              <table id="mytable" class="table table-hover table-center mb-0 datatable">
+                                 <thead>
+                                    <tr>
+                                       <th>ID</th>
+                                       <th>Name</th>
+                                       <th>EMAIL</th>
+
+
+
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                 {% for i in attendance_report %}
+                                    <tr>
+                                       <td>{{i.employee_id.admin.id}}</td>
+                                        <td>{{i.employee_id.admin.first_name}}&nbsp;{{i.employee_id.admin.last_name}}</td>
+                                        <td>{{i.employee_id.admin.email}}</td>
+                                    </tr>
+                                {% endfor%}
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+{%endblock%}l>
